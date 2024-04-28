@@ -1,0 +1,337 @@
+DROP TABLE IF EXISTS supplier_ingredient;
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS way_bills;
+
+CREATE TABLE way_bills  (
+  bill_id INTEGER  PRIMARY KEY ,
+  date_receipt CHAR(255),
+  price INTEGER 
+);
+
+CREATE TABLE authors (
+  author_id INTEGER  PRIMARY KEY,
+  surname CHAR(255),
+  name CHAR(255),
+  country CHAR(255),
+  year CHAR(255)
+);
+CREATE TABLE supplier_ingredient (
+  supplier_id INTEGER  PRIMARY KEY,
+  name CHAR(255),
+  address CHAR(255)
+);
+
+CREATE TABLE recipes (
+  recipe_id INTEGER  PRIMARY KEY,
+  recipe_name CHAR(255),
+  recipe_def CHAR(255),
+  FOREIGN KEY (author_id) REFERENCES authors (author_id) ON DELETE CASCADE, 
+  cooking_method CHAR(255)
+);
+
+#
+CREATE TABLE ingredients (
+  ingredient_id INTEGER  PRIMARY KEY,
+  calories INTEGER ,
+  FOREIGN KEY (bill_id) REFERENCES way_bills (bill_id) ON DELETE CASCADE , 
+  FOREIGN KEY (supplier_id) REFERENCES supplier_ingredient (supplier_id) ON DELETE CASCADE 
+
+);
+
+CREATE TABLE products (
+  product_id INTEGER  PRIMARY KEY,
+  FOREIGN KEY (recipe_id) REFERENCES recipes (recipe_id) ON DELETE CASCADE ,
+  FOREIGN KEY (ingredient_id) REFERENCES ingredients (ingredient_id) ON DELETE CASCADE
+);
+
+
+
+
+# Удаляем таблицы, если они существуют
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS ingredients;
+DROP TABLE IF EXISTS recipes;
+DROP TABLE IF EXISTS supplier_ingredient;
+DROP TABLE IF EXISTS way_bills;
+DROP TABLE IF EXISTS authors;
+
+# Создаем таблицу way_bills
+CREATE TABLE way_bills (
+  bill_id INTEGER PRIMARY KEY,
+  date_receipt CHAR(255),
+  price INTEGER
+);
+
+# Создаем таблицу authors
+CREATE TABLE authors (
+  author_id INTEGER PRIMARY KEY,
+  surname CHAR(255),
+  name CHAR(255),
+  country CHAR(255),
+  year CHAR(255)
+);
+
+# Создаем таблицу supplier_ingredient
+CREATE TABLE supplier_ingredient (
+  supplier_id INTEGER PRIMARY KEY,
+  name CHAR(255),
+  address CHAR(255)
+);
+o 
+# Создаем таблицу ingredients с внешними ключами bill_id и supplier_id
+CREATE TABLE ingredients (
+  ingredient_id INTEGER PRIMARY KEY,
+  calories INTEGER,
+  bill_id INTEGER,
+  supplier_id INTEGER,
+  FOREIGN KEY (bill_id) REFERENCES way_bills (bill_id) ON DELETE CASCADE,
+  FOREIGN KEY (supplier_id) REFERENCES supplier_ingredient (supplier_id) ON DELETE CASCADE
+);
+
+# Создаем таблицу recipes с внешним ключом author_id, который ссылается на authors
+CREATE TABLE recipes (
+  recipe_id INTEGER PRIMARY KEY,
+  measure INTEGER,
+  recipe_name CHAR(255),
+  recipe_def CHAR(255),
+  author_id INTEGER,
+  method_id INTEGER,
+  ingredient_id INTEGER,
+  FOREIGN KEY (ingredient_id) REFERENCES ingredients (ingredient_id) ON DELETE CASCADE,
+  FOREIGN KEY (method_id) REFERENCES cook_method (method_id) ON DELETE CASCADE,
+  FOREIGN KEY (author_id) REFERENCES authors (author_id) ON DELETE CASCADE
+);
+
+
+
+# Создаем таблицу products с внешними ключами recipe_id и ingredient_id
+CREATE TABLE products (
+  product_id INTEGER PRIMARY KEY,
+  recipe_id INTEGER,
+  ingredient_id INTEGER,
+  FOREIGN KEY (recipe_id) REFERENCES recipes (recipe_id) ON DELETE CASCADE,
+  FOREIGN KEY (ingredient_id) REFERENCES ingredients (ingredient_id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE products_group (
+    group_id INTEGER PRIMARY KEY, 
+    group_name CHAR(255),
+    product_id INTEGER,
+    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE CASCADE
+
+
+
+);
+
+
+
+INSERT INTO products_group (group_id, group_name, product_id) VALUES
+(1, 'Фрукты', 101),
+(2, 'Овощи', 102),
+(3, 'Мясо', 103),
+(4, 'Рыба', 104),
+(5, 'Молочные продукты', 105),
+(6, 'Зерновые', 106),
+(7, 'Кондитерские изделия', 107),
+(8, 'Напитки', 108),
+(9, 'Постные продукты', 109),
+(10, 'Замороженные продукты', 110),
+(11, 'Консервы', 111),
+(12, 'Полуфабрикаты', 112),
+(13, 'Печенье и кексы', 113),
+(14, 'Соки и газировка', 114),
+(15, 'Специи и приправы', 115),
+(16, 'Хлеб и выпечка', 116),
+(17, 'Пицца и готовые блюда', 117),
+(18, 'Сухофрукты и орехи', 118),
+(19, 'Яйца', 119),
+(20, 'Детское питание', 120);
+
+
+
+
+
+SELECT * FROM products_group;
+SELECT * FROM products;
+SELECT * FROM recipes;
+SELECT * FROM ingredients;
+SELECT * FROM supplier_ingredient;
+SELECT * FROM way_bills;
+SELECT * FROM cook_method;
+SELECT * FROM authors;
+
+
+
+INSERT INTO `products` (`product_id`, `product_def`, `recipe_id`, `ingredient_id`) VALUES
+(1,	'картофель',	1,	1),
+(2,	'картофель',	2,	2),
+(3,	'картофель',	3,	3),
+(4,	'картофель',	4,	4),
+(5,	'пудинг',	5,	5),
+(6,	'пудинг',	6,	6),
+(7,	'чебуреки',	7,	7),
+(8,	'чебуреки',	8,	8),
+(9,	'салат',	9,	9),
+(10,	'салат',	10,	10),
+(11,	'',	11,	11),
+(12,	'',	12,	12),
+(13,	'',	13,	13),
+(14,	'',	14,	14),
+(15,	'',	15,	15),
+(16,	'',	16,	16),
+(17,	'',	17,	17),
+(18,	'',	18,	18),
+(19,	'',	19,	19),
+(20,	'',	20,	20);
+
+
+
+
+INSERT INTO `ingredients` (`ingredient_id`, `ingredient_def`, `calories`, `bill_id`, `supplier_id`) VALUES
+(1,	'яблоко',	100,	1,	1),
+(2,	'банан',	110,	2,	2),
+(3,	'говядина',	120,	3,	3),
+(4,	'свинина',	130,	4,	4),
+(5,	'курица',	140,	5,	5),
+(6,	'вода',	150,	6,	6),
+(7,	'разрыхлитель',	160,	7,	7),
+(8,	'огурец',	170,	8,	8),
+(9,	'томат',	180,	9,	9),
+(10,	'груша',	190,	10,	10),
+(11,	'капуста',	200,	11,	11),
+(12,	'морковь',	210,	12,	12),
+(13,	'свекла',	220,	13,	13),
+(14,	'мука',	230,	14,	14),
+(15,	'тесто',	240,	15,	15),
+(16,	'масло растительное',	250,	16,	16),
+(17,	'масло сливочное',	260,	17,	17),
+(18,	'перец',	270,	18,	18),
+(19,	'сахар',	280,	19,	19),
+(20,	'соль',	290,	20,	20);
+
+
+
+INSERT INTO `cook_method` (`method_id`, `cook_method`) VALUES
+(1,	'Варить'),
+(2,	'Смешивать'),
+(3,	'Жарить'),
+(4,	'Запекать'),
+(5,	'Варить'),
+(6,	'Тушить');
+
+
+
+INSERT INTO `recipes` (`recipe_id`, `measure`, `recipe_name`, `recipe_def`, `author_id`, `method_id`, `ingredient_id_1`, `ingredient_id_2`, `ingredient_id_3`) VALUES
+(1,	300,	'салат',	'с огурцами и помидорами',	1,	2,	8,	9,	20),
+(2,	340,	'салат',	'фруктовый',	2,	2,	1,	2,	19),
+(3,	250,	'говядина',	'по французски',	3,	4,	3,	12,	17),
+(4,	250,	'говядина',	'тушеная',	4,	6,	3,	NULL,	NULL),
+(5,	500,	'пирог',	'с мясом',	5,	4,	15,	4,	12),
+(6,	520,	'шарлотка',	'с яблоками',	6,	4,	1,	15,	7);
+
+
+
+# Просмотр прайс-листа заданного поставщика на заданную дату – дата, реквизиты поставщика, название ингредиента, его стоимость за единицу.
+SELECT date_receipt,supplier_ingredient.name,ingredient_def,address,price
+FROM supplier_ingredient
+JOIN ingredients ON supplier_ingredient.supplier_id = ingredients.supplier_id
+JOIN way_bills ON ingredients.bill_id = way_bills.bill_id
+WHERE date_receipt = "2023-09-14" 
+;
+
+#Просмотр списка блюд, имеющих минимальную калорийность.
+SELECT recipe_name AS Рецепт ,recipe_def AS Описание
+,SUM(subquerry.calories) AS Калорийность 
+FROM (
+
+
+
+SELECT   recipe_name,recipe_def,calories
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_1 = ingredients.ingredient_id 
+  
+UNION
+    
+     
+
+SELECT recipe_name,recipe_def,calories 
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_2 = ingredients.ingredient_id 
+      
+UNION
+
+SELECT recipe_name,recipe_def,calories 
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_3 = ingredients.ingredient_id 
+      
+
+ORDER BY recipe_def
+
+) as subquerry
+
+GROUP BY subquerry.recipe_name,subquerry.recipe_def 
+ORDER BY SUM(subquerry.calories)
+;
+
+
+
+
+# Просмотр списка блюд и названия рецептов для каждого блюда.
+SELECT recipe_name AS Рецепт ,recipe_def AS Описание
+
+FROM (
+
+
+
+SELECT   recipe_name,recipe_def,calories
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_1 = ingredients.ingredient_id 
+  
+UNION
+    
+     
+
+SELECT recipe_name,recipe_def,calories 
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_2 = ingredients.ingredient_id 
+      
+UNION
+
+SELECT recipe_name,recipe_def,calories 
+  from recipes 
+  JOIN ingredients
+    ON recipes.ingredient_id_3 = ingredients.ingredient_id 
+      
+
+ORDER BY recipe_def
+
+) as subquerry
+
+GROUP BY subquerry.recipe_name,subquerry.recipe_def 
+ORDER BY subquerry.recipe_name
+
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#"
+     xml:base="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasCart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasCart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isCartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isItemOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isCartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isCartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isItemOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasDiscount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasDiscount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasModel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#hasCart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#isCartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Console -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Console">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Headphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Headphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PeripheralDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Keyboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Keyboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PeripheralDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Laptop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Laptop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Mouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Mouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PeripheralDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PeripheralDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#PeripheralDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Phone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Phone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#TV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#TV">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Tablet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Tablet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AmazingStore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AmazingStore">
+        <hasAddress>https://amazingstore.com</hasAddress>
+        <hasName>Amazing Store</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeLaptop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeLaptop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Laptop"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeStore"/>
+        <hasModel>AwesomeLaptop A1</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1549.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomePhone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomePhone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Phone"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeStore"/>
+        <hasModel>AwesomePhone A1</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">215.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeStore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#AwesomeStore">
+        <hasAddress>https://awesomestore.com</hasAddress>
+        <hasName>Awesome Store</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#BestKeyboard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#BestKeyboard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Keyboard"/>
+        <hasModel>BestKeyboard A1</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#BestStore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#BestStore">
+        <hasAddress>https://beststore.com</hasAddress>
+        <hasName>Best Store</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#CartOfJohnDoe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#CartOfJohnDoe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+        <hasItem rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatCamera"/>
+        <isCartOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#JohnDoe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#CartOfRichardRoe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#CartOfRichardRoe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Cart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#FantasticStore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#FantasticStore">
+        <hasAddress>https://fantasticstore.com</hasAddress>
+        <hasName>Fantastic Store</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatCamera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatCamera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Camera"/>
+        <hasModel>Great Camera 1A</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">199.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatConsole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatConsole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Console"/>
+        <hasModel>GreatConsole B3K9</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">610.2</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatPhone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatPhone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Phone"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#CartOfRichardRoe"/>
+        <isItemOf rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatStore"/>
+        <hasModel>GreatPhone A1000</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">399.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatStore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#GreatStore">
+        <hasAddress>https://greatstore.com</hasAddress>
+        <hasName>Great Store</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#JohnDoe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#JohnDoe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+        <hasName>John Doe</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#RichardRoe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#RichardRoe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Buyer"/>
+        <hasName>Richard Roe</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#StandardMouse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#StandardMouse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology#Mouse"/>
+        <hasModel>StandardMouse B33</hasModel>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.25</hasPrice>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

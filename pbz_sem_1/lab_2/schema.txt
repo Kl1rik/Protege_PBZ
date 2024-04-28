@@ -1,0 +1,56 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table way_bills  {
+  bill_id integer [primary key]
+  date_receipt char
+  price integer
+}
+
+Table recipes {
+  recipe_id integer [primary key]
+  recipe_name char
+  recipe_def char
+  author_id integer
+  cooking_method char
+}
+
+Table author {
+  author_id integer [primary key]
+  surname char
+  name char
+  country char
+  year char
+}
+
+Table ingredients {
+  ingredient_id integer [primary key]
+  calories integer
+  bill_id integer
+  supplier_id integer
+
+}
+
+Table products {
+  product_id integer [primary key]
+  recipe_id integer
+  ingredient_id integer
+}
+
+Table supplier_ingredient {
+  supplier_id integer [primary key]
+  name char
+  address char
+}
+
+
+
+Ref: way_bills.bill_id > ingredients.bill_id
+
+Ref: recipes.author_id < author.author_id
+
+Ref: ingredients.supplier_id < supplier_ingredient.supplier_id
+
+Ref: products.ingredient_id < ingredients.ingredient_id
+
+Ref: products.recipe_id < recipes.recipe_id

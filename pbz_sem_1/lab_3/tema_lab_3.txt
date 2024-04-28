@@ -1,0 +1,357 @@
+минералогия 
+
+порода земной коры
+тип (осадочная магматическая горная полезное ископаемое )
+
+
+возможные параметры:
+вид горной породы(минерал руда горного происхождения)
+виды руды(электропроводная неэлектропроводная)
+виды минералов(драгоценные полудрагоценные)
+
+
+общие парметры:
+температура плавления 
+химическая формула 
+процент в земной коре
+твердость по шкале мооса
+
+
+
+
+CREATE (rock:Class {name: "Горная порода"})
+CREATE (mineral:Class {name: "Минерал"})
+CREATE (ore:Class {name: "Руда"})
+CREATE (sedimentary:Class {name: "Осадочная порода"})
+
+CREATE (electricity:Class {name: "Электропроводность"})
+CREATE (temp_heat:Class {name: "Температура плавления"})
+CREATE (hardness:Class {name: "Твердость"})
+CREATE (formula:Class {name: "Химическая формула"})
+
+
+
+CREATE (rock)-[:тип]->(mineral)
+CREATE (rock)-[:тип]->(ore)
+CREATE (rock)-[:тип]->(sedimentary)
+
+
+
+
+CREATE (ruby:Node {name: "Рубин"})
+CREATE (emerald:Node {name: "Изумруд"})
+CREATE (diamond:Node {name: "Алмаз"})
+CREATE (topaz:Node {name: "Топаз"})
+
+CREATE (gold:Node {name: "Золото"})
+CREATE (silver:Node {name: "Серебро"})
+CREATE (copper:Node {name: "Медь"})
+
+CREATE (chalk:Node {name: "мел"})
+CREATE (sand:Node {name: "песок"})
+CREATE (silicium:Node {name: "кремний"})
+
+
+
+
+CREATE (fe:Node {name: "Железо"});
+CREATE (al:Node {name: "Алюминий"});
+CREATE (co:Node {name: "Кобальт"});
+
+CREATE (saphire:Node {name: "Сапфир"});
+CREATE (aqua:Node {name: "Аквамарин"});
+CREATE (pir:Node {name: "Пирит"});
+
+CREATE (iz:Node {name: "Известняк"});
+CREATE (sl:Node {name: "Сланец"});
+CREATE (gl:Node {name: "Глина"});
+
+
+CREATE (six: number {value: 6});
+CREATE (five: number {value: 5});
+CREATE (seven: number {value: 7});
+
+
+CREATE (temp_sl: number {value: 821});
+CREATE (temp_iz: number {value: 514});
+CREATE (temp_gl: number {value: 424});
+CREATE (temp_al: number {value: 660});
+CREATE (temp_fe: number {value: 1538});
+CREATE (remp_co: number {value: 1495});
+CREATE (temp_sap: number {value: 2040});
+CREATE (temp_aqua: number {value: 1700});
+CREATE (temp_pi: number {value: 1177});
+
+
+
+
+MATCH (a:Node),(b:Class) WHERE a.name = "Сапфир" AND  b.name = "Минерал" CREATE (a)-[:это]->(b); 
+MATCH (a:Node),(b:Class) WHERE a.name = "Аквамарин" AND  b.name = "Минерал" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Пирит" AND  b.name = "Минерал" CREATE (a)-[:это]->(b);
+
+MATCH (a:Node),(b:Class) WHERE a.name = "Кобальт" AND  b.name = "Руда" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Алюминий" AND  b.name = "Руда" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Железо" AND  b.name = "Руда" CREATE (a)-[:это]->(b);
+
+MATCH (a:Node),(b:Class) WHERE a.name = "Сланец" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Известняк" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Глина" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+
+
+
+
+
+
+MATCH (a:Node),(b:Class) WHERE a.name = "Сапфир" AND  b.name = "Драгоценные камни" CREATE (a)-[:включение]->(b); 
+MATCH (a:Node),(b:Class) WHERE a.name = "Аквамарин" AND  b.name = "Драгоценные камни" CREATE (a)-[:включение]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Медь" AND  b.name = "Цветные металлы" CREATE (a)-[:включение]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Алюминий" AND  b.name = "Цветные металлы" CREATE (a)-[:включение]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Алюминий" AND  b.name = "Руда" CREATE (a)-[:включение]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Железо" AND  b.name = "Руда" CREATE (a)-[:эт]->(b);
+
+MATCH (a:Node),(b:Class) WHERE a.name = "Сланец" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Известняк" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+MATCH (a:Node),(b:Class) WHERE a.name = "Глина" AND  b.name = "Осадочная порода" CREATE (a)-[:это]->(b);
+
+
+
+
+
+
+
+
+
+MATCH (a:Node),(b:number) WHERE a.name = "Сапфир" AND  b.value = 8 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Пирит" AND  b.value = 6 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Железо" AND  b.value = 5 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Кобальт" AND  b.value = 5 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Аквамарин" AND  b.value = 7 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Известняк" AND  b.value = 3 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Сланец" AND  b.value = 4 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Глина" AND  b.value = 1 CREATE (a)-[:твердость]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Алюминий" AND  b.value = 4 CREATE (a)-[:твердость]->(b); 
+
+
+
+MATCH (a:Node),(b:number) WHERE a.name = "Сапфир" AND  b.value = 2040 CREATE (a)-[:температура_плавления]->(b); 
+MATCH (a:Node),(b:number) WHERE a.name = "Глина" AND  b.value = 424 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Пирит" AND  b.value = 1177 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Аквамарин" AND  b.value = 1700 CREATE (a)-[:температура_плавления]->(b) ;
+
+MATCH (a:Node),(b:number) WHERE a.name = "Железо" AND  b.value = 1538 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Алюминий" AND  b.value = 660 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Кобальт" AND  b.value = 1495 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Сланец" AND  b.value = 821 CREATE (a)-[:температура_плавления]->(b) ;
+MATCH (a:Node),(b:number) WHERE a.name = "Известняк" AND  b.value = 514 CREATE (a)-[:температура_плавления]->(b) ;
+
+
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Сапфир" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) ;
+MATCH (a:Node),(b:Node) WHERE a.name = "Железо" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) ;
+MATCH (a:Node),(b:Node) WHERE a.name = "Алюминий" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) ;
+MATCH (a:Node),(b:Node) WHERE a.name = "Известняк" AND  b.name = "НЕТ" CREATE (a)-[:электропроводность]->(b) ;
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Сланец" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) ;
+MATCH (a:Node),(b:Node) WHERE a.name = "Глина" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) ;
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Пирит" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) ;
+
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Кобальт" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) ;
+
+MATCH (a:Node),(b:Node) WHERE a.name = "" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE (ruby)-[:это]->(mineral)
+CREATE (emerald)-[:это]->(mineral)
+CREATE (diamond)-[:это]->(mineral)
+
+
+CREATE (gold)-[:это]->(ore)
+CREATE (silver)-[:это]->(ore)
+CREATE (copper)-[:это]->(ore)
+
+CREATE (chalk)-[:это]->(sedimentary)
+CREATE (sand)-[:это]->(sedimentary)
+CREATE (silicium)-[:это]->(sedimentary)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MATCH (a:Node),(b:Number) WHERE a.name = "Алмаз" AND  b.name = "10" CREATE (a)-[:твердость]->(b) 
+
+
+CREATE (ten: number {value: 10})
+CREATE (nine: number {value: 9})
+CREATE (eight: number {value: 8})
+CREATE (seven: number {value: 7})
+CREATE (six: number {value: 6})
+CREATE (five: number {value: 5})
+CREATE (four: number {value: 4})
+CREATE (three: number {value: 3})
+CREATE (two: number {value: 2})
+CREATE (one: number {value: 1})
+
+
+CREATE (temp_si: number {value: 1414})
+CREATE (temp_sand: number {value:1710})
+CREATE (temp_au: number {value: 1064})
+CREATE (temp_ag: number {value: 961})
+
+CREATE (temp_cu: number {value: 1984})
+CREATE (temp_ch: number {value: 825})
+CREATE (temp_ru: number {value: 2050})
+CREATE (temp_di: number {value: 3500})
+
+CREATE (temp_em: number {value: 1400})
+
+
+
+
+
+MATCH (a:Node),(b:number) WHERE a.name = "Рубин" AND  b.value = 2050 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "мел" AND  b.value = 825 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Изумруд" AND  b.value = 1400 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "песок" AND  b.value = 1710 CREATE (a)-[:температура_плавления]->(b) 
+
+MATCH (a:Node),(b:number) WHERE a.name = "кремний" AND  b.value = 1414 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Медь" AND  b.value = 1984 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Серебро" AND  b.value = 961 CREATE (a)-[:температура_плавления]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Золото" AND  b.value = 1064 CREATE (a)-[:температура_плавления]->(b) 
+
+MATCH (a:Node),(b:number) WHERE a.name = "Алмаз" AND  b.value = 3500 CREATE (a)-[:температура_плавления]->(b) 
+
+
+
+
+
+
+
+
+
+
+
+
+MATCH (a:Node),(b:number) WHERE a.name = "Рубин" AND  b.value = 9 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Мел" AND  b.value = 1 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Изумруд" AND  b.value = 8 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Песок" AND  b.value = 1 CREATE (a)-[:твердость]->(b) 
+
+MATCH (a:Node),(b:number) WHERE a.name = "Кремний" AND  b.value = 7 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Медь" AND  b.value = 3 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Серебро" AND  b.value = 3 CREATE (a)-[:твердость]->(b) 
+MATCH (a:Node),(b:number) WHERE a.name = "Золото" AND  b.value = 2 CREATE (a)-[:твердость]->(b) 
+
+CREATE (yes:Node {name: "Да"})
+CREATE (no:Node {name: "Нет"})
+
+
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Золото" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Серебро" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Медь" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Никель" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) 
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "мел" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "кремний" AND  b.name = "Да" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "песок" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+
+
+MATCH (a:Node),(b:Node) WHERE a.name = "Изумруд" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Рубин" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Топаз" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+MATCH (a:Node),(b:Node) WHERE a.name = "Алмаз" AND  b.name = "Нет" CREATE (a)-[:электропроводность]->(b) 
+
+
+CREATE (jewerly:Class{name:"Драгоценности"})
+
+
+
+#Запросы
+1
+#Вывести все узлы и связи 
+match (n) return n;
+
+2
+#Найти все горные породы,являющиеся рудами 
+MATCH (rock:Class{name:"Горная порода"})<-[:тип]-(ore:Class{name:"Руда"})<-[:это]-(o)
+RETURN o;
+
+3
+#Найти все горные породы,являющиеся рудами и имеющие твердость 3
+MATCH (rock:Class{name:"Горная порода"})<-[:тип]-(ore:Class{name:"Руда"})<-[:это]-(o)-[:твердость]->(three:number{value:3})
+RETURN o;
+
+4
+#Вывести все электропроводящие породы
+MATCH (rock:Class{name:"Горная порода"})<-[:тип]-(x)<-[:это]-(o)-[:электропроводность]->(yes:Node{name:"Да"})
+RETURN x,o;
+
+5
+#Вывести все неэлектропроводящие породы
+MATCH (x)<-[:это]-(o)-[:электропроводность]->(yes:Node{name:"Нет"})
+RETURN x,o;
+
+6
+#Вывести руды,температура плавления которых больше 1000 градусов
+MATCH (ore:Class{name:"Руда"})<-[:это]-(o)-[:температура_плавления]->(x:number)
+WHERE x.value > 1000
+RETURN x,o;
+
+7
+#Вывести все вершины с типом Node
+MATCH (x:Node)
+RETURN x;
+
+8
+#Получить все горные породы с твердостью от 4 включительно  до 10 не включительно
+MATCH (x:Node)-[:твердость]->(o)
+WHERE o.value >= 4 AND o.value < 10
+RETURN x,o;
+
+9
+#Получить все металлы,относящиеся к группе цветные металлы
+MATCH (n:Node)-[:включение]->(col_ore:Class{name:"Цветные металлы"}) RETURN n;
+
+10
+#Получить самую высокую температуру плавления
+MATCH (x:Node)-[:температура_плавления]->(o)
+RETURN MAX(o.value);
+
+
+
+
+
+
+

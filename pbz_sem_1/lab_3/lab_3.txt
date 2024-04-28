@@ -1,0 +1,96 @@
+// узлы для понятий
+CREATE (product:Concept {name: "Продукт"})
+CREATE (technology:Concept {name: "Технология"})
+CREATE (recipe:Concept {name: "Рецепт"})
+CREATE (ingredient:Concept {name: "Ингредиент"})
+CREATE (composition:Concept {name: "Состав"})
+CREATE (manufacturer:Concept {name: "Производитель"})
+CREATE (cooking_method:Concept {name: "Способ приготовления"})
+CREATE (category:Concept {name: "Категория продукта"})
+CREATE (brand:Concept {name: "Бренд"})
+CREATE (supplier:Concept {name: "Поставщик"})
+
+//  между узлами 
+CREATE (technology)-[:RELATED_TO]->(recipe)
+CREATE (recipe)-[:CONTAINS]->(ingredient)
+CREATE (product)-[:COMPOSED_OF]->(composition)
+CREATE (product)-[:MANUFACTURED_BY]->(manufacturer)
+CREATE (product)-[:COOKED_WITH]->(cooking_method)
+CREATE (product)-[:BELONGS_TO]->(category)
+CREATE (product)-[:BRAND]->(brand)
+CREATE (ingredient)-[:SUPPLIED_BY]->(supplier)
+CREATE (product)-[:SUPPLIED_BY]->(supplier)
+
+
+
+// узлы для понятий
+CREATE (product:Concept {name: "Продукт"})
+CREATE (technology:Concept {name: "Технология"})
+CREATE (recipe:Concept {name: "Рецепт"})
+CREATE (ingredient:Concept {name: "Ингредиент"})
+CREATE (composition:Concept {name: "Состав"})
+CREATE (manufacturer:Concept {name: "Производитель"})
+CREATE (cooking_method:Concept {name: "Способ приготовления"})
+CREATE (category:Concept {name: "Категория продукта"})
+CREATE (brand:Concept {name: "Бренд"})
+CREATE (supplier:Concept {name: "Поставщик"})
+
+// Создание связей между узлами для обозначения отношений
+CREATE (technology)-[:RELATED_TO]->(recipe)
+CREATE (recipe)-[:CONTAINS]->(ingredient)
+CREATE (product)-[:COMPOSED_OF]->(composition)
+CREATE (product)-[:MANUFACTURED_BY]->(manufacturer)
+CREATE (product)-[:COOKED_WITH]->(cooking_method)
+CREATE (product)-[:BELONGS_TO]->(category)
+CREATE (product)-[:BRAND]->(brand)
+CREATE (ingredient)-[:SUPPLIED_BY]->(supplier)
+CREATE (product)-[:CONTAINS_OF]->(ingredient)
+CREATE (product)-[:ACCORDING_TO]->(recipe)
+
+MATCH (product{name:"Продукт"})<-[:BELONGS_TO]-(n)
+MATCH (category{name:"Категория продукта"})<-[:BELONGS_TO]-(n) RETURN category,n
+
+
+
+
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Супы" AND  b.name = "Категория продукта" CREATE (a)-[:BELONGS_TO]->(b) 
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Салаты" AND  b.name = "Категория продукта" CREATE (a)-[:BELONGS_TO]->(b) 
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Жареное" AND  b.name = "Категория продукта" CREATE (a)-[:BELONGS_TO]->(b) 
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Выпечка" AND  b.name = "Категория продукта" CREATE (a)-[:BELONGS_TO]->(b) 
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Суп куриный" AND  b.name = "Продукт" CREATE (a)-[:BELONGS_TO]->(b) 
+MATCH (a:Concept),(b:Concept) WHERE a.name = "Салат с морепродуктами" AND  b.name = "Продукт" CREATE (a)-[:BELONGS_TO]->(b) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

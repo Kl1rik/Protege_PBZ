@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.yso.fi/onto/unspsc/" uri="file:/home/kl1rik/pbz_sem_2/lab_2/ontology_files/third_party_ontologies/unspsc.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.yso.fi/onto/consumer_service/" uri="file:/home/kl1rik/pbz_sem_2/lab_2/ontology_files/third_party_ontologies/consumer_service.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/gatsinski/ontologies/2019/0/store-ontology" uri="file:/home/kl1rik/pbz_sem_2/lab_2/ontology_files/third_party_ontologies/store-ontology.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1714302219606" name="duplicate:http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology/" uri="merge-soundcon-shop-ontology.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1714302219606" name="duplicate:http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology/" uri="soundcon-shop-ontology.rdf"/>
+    </group>
+</catalog>

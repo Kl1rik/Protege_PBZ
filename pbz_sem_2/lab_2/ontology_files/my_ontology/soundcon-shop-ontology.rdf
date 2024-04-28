@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology/"
+     xml:base="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:soundcon-shop-ontology="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasCart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasCart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isCartof"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isItemof"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isCartof -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isCartof">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isItemof -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isItemof">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#HasAmpClass -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#HasAmpClass">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasBalanceOutput -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasBalanceOutput">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasDriver -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasDriver">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Headphones"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasMaterial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasMaterial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasOutputMW -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasOutputMW">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasPrice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#HasAmpClass"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasOutputMW"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Custom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AudioAMP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AudioAMP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audio_DAC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audio_DAC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audiointerface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audiointerface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BT_Headphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BT_Headphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Headphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasItem"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasCart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#isCartof"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Closed_back_bt_headphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Closed_back_bt_headphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BT_Headphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Creator_Audiointerface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Creator_Audiointerface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audiointerface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Custom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Custom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasBalanceOutput"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasOutputMW"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DJ_Audiointerface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DJ_Audiointerface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audiointerface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Driver"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Ear_pads -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Ear_pads">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Accesory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Earphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Earphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Headphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#FAQ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#FAQ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#GuitarAMP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#GuitarAMP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AMP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Guitar_DAC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Guitar_DAC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DAC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Headphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Headphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Custom"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasDriver"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Item">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#hasPrice"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Mono_driver_Earphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Mono_driver_Earphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Earphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Multi_driver_Earphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Multi_driver_Earphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Earphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Open_back_bt_headphones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Open_back_bt_headphones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BT_Headphones"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Argentum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Argentum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audeze_maxwell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audeze_maxwell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Open_back_bt_headphones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#BA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Driver"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#CartJonnDoe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#CartJonnDoe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Chord_Mojo_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Chord_Mojo_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audio_DAC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Copper -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Copper">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Dynamic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Dynamic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Driver"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Fiio_KA13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Fiio_KA13">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AudioAMP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Fiio_fw1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Fiio_fw1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Closed_back_bt_headphones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Focusright_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Focusright_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Creator_Audiointerface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Huawei_freebuds_5i -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Huawei_freebuds_5i">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Closed_back_bt_headphones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#JBL_t10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#JBL_t10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Mono_driver_Earphones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Jonn_Doe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Jonn_Doe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Buyer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Kbear_xv40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Kbear_xv40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Cable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Leather -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Leather">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#GuitarAMP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_P4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_P4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Guitar_DAC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_P41 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Marshall_P41">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Guitar_DAC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Onkyo_ta1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Onkyo_ta1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Mono_driver_Earphones"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Planar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Planar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Driver"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Soundcon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Soundcon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Store"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Tissue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Tissue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Topping_D10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Topping_D10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Audio_DAC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Topping_G5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Topping_G5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#AudioAMP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Trn_st5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Trn_st5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Multi_driver_Earphones"/>
+        <soundcon-shop-ontology:hasDriver>BA</soundcon-shop-ontology:hasDriver>
+        <soundcon-shop-ontology:hasDriver>Dynamic</soundcon-shop-ontology:hasDriver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Truthear_nova -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Truthear_nova">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Multi_driver_Earphones"/>
+        <soundcon-shop-ontology:hasDriver>BA</soundcon-shop-ontology:hasDriver>
+        <soundcon-shop-ontology:hasDriver>Dynamic</soundcon-shop-ontology:hasDriver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Universal_audio_volt_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Universal_audio_volt_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Creator_Audiointerface"/>
+        <soundcon-shop-ontology:hasBalanceOutput rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</soundcon-shop-ontology:hasBalanceOutput>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Universal_audio_volt_176 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#Universal_audio_volt_176">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kl1rik/ontologies/2024/3/soundcon-shop-ontology#DJ_Audiointerface"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
